@@ -1,0 +1,865 @@
+/* ============================================================
+   APRILAND — CLASSIC SUPER MARIO THEME OVERRIDES
+   Load this file AFTER style.css in your HTML.
+   Palette: NES sky, Mario red, overalls blue, pipe green, coins.
+   ============================================================ */
+
+:root {
+  --mario-sky: #5c94fc;
+  --mario-red: #e52521;
+  --mario-red-dark: #9f1724;
+  --mario-blue: #0028c8;
+  --mario-yellow: #fce100;
+  --mario-green: #00a800;
+  --mario-pipe-dark: #006800;
+  --mario-brick: #b84418;
+  --mario-ground-top: #fc9838;
+  --ink: #000000;
+  --paper-trans: rgba(255, 255, 255, 0.85);
+  --paper-card: #f8f8f8;
+
+  /* Keep older variable names working throughout the existing stylesheet. */
+  --red: var(--mario-red);
+  --red-dark: var(--mario-red-dark);
+  --blue: var(--mario-blue);
+  --sky: var(--mario-sky);
+  --yellow: var(--mario-yellow);
+  --green: var(--mario-green);
+  --muted: rgba(0, 0, 0, 0.72);
+  --line: rgba(0, 0, 0, 0.18);
+  --paper: var(--paper-card);
+  --soft: var(--paper-trans);
+  --pixel: 'Press Start 2P', monospace;
+  --body: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --shadow: 5px 5px 0 rgba(0, 0, 0, 0.18);
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  color: var(--ink);
+  background: var(--mario-sky);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.7;
+}
+button, input, textarea, select { font-family: var(--body); }
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ink);
+  font-family: var(--body);
+  font-weight: 900;
+}
+::selection { color: var(--ink); background: var(--mario-yellow); }
+:focus-visible { outline: 3px solid var(--mario-yellow); outline-offset: 4px; }
+
+/* Pixel lettering is used for game labels, not long paragraphs. */
+.eyebrow,
+.section-kicker,
+.about-level-label,
+.about-player-status span,
+.hud-brand,
+.hud-world small,
+.hud-coins small,
+.hud-world strong,
+.hud-coins > strong,
+.checkpoint-world,
+.checkpoint-tags span,
+.favorite-number,
+.favorite-foot,
+.goal-status,
+.game-label,
+.score-board > span,
+.score-board small,
+.quiz-top,
+.question-label,
+.contact-link small {
+  font-family: var(--pixel);
+  letter-spacing: 0;
+}
+
+/* Header: blue HUD, gold active tile, and Mario-red contact button. */
+.site-header {
+  background: rgba(0, 40, 200, 0.97);
+  border-bottom: 5px solid var(--mario-green);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(12px);
+}
+.navbar { min-height: 82px; }
+.brand { gap: 11px; }
+.brand-logo {
+  background: var(--paper-card);
+  border: 3px solid var(--mario-yellow);
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.brand-name {
+  color: #fff;
+  font-family: var(--body);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.7px;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+.brand-name > span { color: var(--mario-yellow); }
+.nav-links { gap: 4px; }
+.nav-link {
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 800;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+.nav-link::after { display: none; }
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateY(-2px);
+}
+.nav-link.active {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  border-color: var(--ink);
+  box-shadow: 0 3px 0 var(--mario-ground-top);
+}
+.nav-star { color: var(--mario-yellow); }
+.nav-link.active .nav-star { color: var(--mario-red); }
+.nav-contact {
+  color: #fff;
+  background: var(--mario-red);
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  box-shadow: 0 4px 0 var(--mario-red-dark);
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 900;
+}
+.nav-contact:hover {
+  color: #fff;
+  background: var(--mario-red-dark);
+  box-shadow: 0 6px 0 var(--ink);
+}
+.menu-toggle {
+  background: var(--mario-yellow);
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.menu-toggle span { background: var(--ink); }
+
+/* Home level: classic NES blue sky, green hills, brick floor. */
+.hero {
+  background: linear-gradient(180deg, var(--mario-sky) 0%, #8bc4ff 57%, #d8edff 100%);
+}
+.hero::before { display: none; }
+.hero-sky { opacity: 1; }
+.hero-sky::before {
+  height: 36px;
+  border-top: 5px solid var(--mario-green);
+  background: repeating-linear-gradient(
+    90deg,
+    var(--mario-brick) 0 31px,
+    var(--mario-ground-top) 31px 35px,
+    var(--mario-brick) 35px 66px
+  );
+  box-shadow: inset 0 5px rgba(255, 255, 255, 0.18);
+}
+.hero-sky::after {
+  border-color: var(--mario-pipe-dark);
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(90deg, var(--mario-green) 0 18%, #54d454 18% 34%, var(--mario-green) 34% 78%, var(--mario-pipe-dark) 78%);
+  box-shadow: inset 0 8px rgba(255, 255, 255, 0.18), 5px 5px 0 rgba(0, 0, 0, 0.16);
+}
+.hero-sky .hill {
+  border-color: var(--mario-green);
+  background: #43c95c;
+  box-shadow: inset 0 13px rgba(255, 255, 255, 0.18);
+}
+.hero h1 { color: var(--ink); text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.45); }
+.hero h1 span { color: var(--mario-red); text-shadow: 2px 2px 0 #fff; }
+.hero h1 span::after { background: var(--mario-yellow); }
+.hero-lead { color: var(--ink); }
+.hero-description { color: rgba(0, 0, 0, 0.78); }
+.hero-meta { color: rgba(0, 0, 0, 0.74); }
+.meta-icon, .tiny-heart { color: var(--mario-red); }
+.eyebrow {
+  color: var(--ink);
+  background: var(--paper-trans);
+  border: 2px solid var(--ink);
+  border-radius: 5px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
+}
+.status-dot, .online-dot, .contact-dot { background: var(--mario-green); }
+.button {
+  border-radius: 5px;
+  font-family: var(--body);
+  font-weight: 900;
+}
+.button-primary {
+  color: #fff;
+  background: var(--mario-red);
+  border: 2px solid var(--ink);
+  box-shadow: 0 4px 0 var(--mario-red-dark);
+}
+.button-primary:hover:not(:disabled) {
+  background: var(--mario-red-dark);
+  box-shadow: 0 6px 0 var(--ink);
+}
+.button-secondary {
+  color: var(--ink);
+  background: var(--paper-trans);
+  border: 2px solid var(--ink);
+  box-shadow: 0 4px 0 var(--ink);
+}
+.button-secondary:hover:not(:disabled) {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  box-shadow: 0 5px 0 var(--ink);
+}
+#hero-powerup span {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  border-color: var(--ink);
+}
+.portrait-card {
+  background: var(--paper-card);
+  border: 4px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 8px 8px 0 var(--ink), 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+.portrait-sky { background: linear-gradient(180deg, var(--mario-sky), #c9ebff); }
+.portrait-frame { border-color: var(--paper-card); box-shadow: 0 0 0 3px var(--ink); }
+.avatar-fallback { background: var(--mario-red); color: #fff; }
+.portrait-ground {
+  background: repeating-linear-gradient(90deg, var(--mario-green) 0 24px, var(--mario-pipe-dark) 24px 48px);
+}
+.floating-label {
+  color: var(--ink);
+  background: var(--paper-card);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.floating-block {
+  color: var(--ink);
+  border: 4px solid var(--mario-brick);
+  border-radius: 0;
+  background: repeating-linear-gradient(45deg, var(--mario-yellow) 0 8px, #ffd02a 8px 16px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.floating-block:hover { box-shadow: 5px 8px 0 var(--ink); }
+.scroll-cue { color: var(--ink); }
+.scroll-line { background: var(--ink); }
+.powerup-toast {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Shared section headings and classic chunky card edges. */
+.section-kicker { color: var(--mario-blue); }
+.section-heading h2 { color: var(--ink); }
+.section-heading h2 span, h2 span { color: var(--mario-red); }
+.section-intro { color: rgba(0, 0, 0, 0.76); }
+.card {
+  background: var(--paper-card);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* About: retain the playable World 1-1 scene and its collectibles. */
+.about-section {
+  background: linear-gradient(180deg, var(--mario-sky) 0%, #c4e8ff 48%, #b8eda1 100%);
+}
+.about-section::before {
+  border-top: 6px solid var(--mario-green);
+  background: repeating-linear-gradient(90deg, var(--mario-brick) 0 34px, var(--mario-ground-top) 34px 38px, var(--mario-brick) 38px 72px);
+}
+.about-game-hud {
+  background: var(--mario-blue);
+  border-color: var(--ink);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.22);
+}
+.about-game-scene {
+  border-color: var(--ink);
+  background: linear-gradient(180deg, var(--mario-sky) 0%, #b9eaff 74%, #7edb62 74%, #7edb62 100%);
+  box-shadow: 7px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.about-scene-copy h2 { color: var(--ink); }
+.about-scene-copy h2 span { color: var(--mario-red); text-shadow: 3px 4px 0 var(--mario-yellow); }
+.about-scene-lead, .about-scene-text, .about-scene-text strong { color: var(--ink); }
+.about-level-label {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  border-color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.about-player-status span { color: var(--ink); border-color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.about-question-block {
+  color: var(--ink);
+  background: linear-gradient(135deg, var(--mario-yellow), #ffbd27);
+  border-color: var(--mario-brick);
+  box-shadow: 4px 4px 0 var(--ink), inset 3px 3px rgba(255, 255, 255, 0.55);
+}
+.about-powerup-message { color: var(--ink); border-left-color: var(--mario-red); }
+.scene-brick-stack span {
+  border-color: var(--mario-brick);
+  background: linear-gradient(135deg, var(--mario-ground-top), var(--mario-brick));
+}
+.scene-brick-stack span:nth-child(2) {
+  border-color: var(--mario-brick);
+  background: linear-gradient(135deg, #fff07c, var(--mario-yellow));
+}
+.scene-coin, .world-coin {
+  border-color: #bd7c00;
+  background: linear-gradient(90deg, #f7b900, #fff07a 48%, var(--mario-yellow));
+  color: var(--ink);
+}
+.about-scene-pipe, .about-scene-pipe span {
+  border-color: var(--mario-pipe-dark);
+  background: linear-gradient(90deg, var(--mario-green) 0 18%, #62df57 18% 35%, var(--mario-green) 35% 78%, var(--mario-pipe-dark) 78%);
+}
+.about-scene-ground, .scene-ground-strip, .checkpoint-ground {
+  border-top-color: var(--mario-green);
+  background: repeating-linear-gradient(90deg, var(--mario-brick) 0 30px, var(--mario-ground-top) 30px 34px, var(--mario-brick) 34px 64px);
+}
+.about-path-heading h3 { color: var(--ink); }
+.about-path-heading h3 span { color: var(--mario-red); }
+.about-path-heading > p:last-child { color: rgba(0, 0, 0, 0.78); }
+.about-world-path::before { border-color: rgba(0, 0, 0, 0.32); }
+.world-checkpoint {
+  color: var(--ink);
+  background: var(--paper-trans);
+  border: 3px solid var(--ink);
+  border-radius: 5px;
+  box-shadow: 5px 6px 0 var(--ink);
+}
+.world-checkpoint:nth-child(2), .world-checkpoint:nth-child(3) { background: var(--paper-trans); }
+.world-checkpoint::before { background: var(--mario-red); }
+.checkpoint-powerup::before { background: var(--mario-yellow); }
+.checkpoint-castle::before { background: var(--mario-green); }
+.checkpoint-world { color: #fff; background: var(--mario-blue); border-color: var(--ink); }
+.checkpoint-icon { background: var(--mario-yellow); border-color: var(--ink); box-shadow: 3px 3px 0 var(--ink); }
+.checkpoint-powerup .checkpoint-icon { background: var(--mario-yellow); }
+.checkpoint-castle .checkpoint-icon { background: #a7eaa7; }
+.world-checkpoint h4 { color: var(--ink); }
+.world-checkpoint p { color: rgba(0, 0, 0, 0.78); }
+.checkpoint-tags span { color: var(--ink); background: var(--paper-trans); border-color: rgba(0, 0, 0, 0.2); }
+.world-coin { box-shadow: 3px 3px 0 var(--ink); }
+.world-coin.is-collected { color: #fff; background: var(--mario-green); border-color: var(--mario-pipe-dark); box-shadow: 3px 3px 0 var(--ink); }
+.about-coin-discovery { background: var(--mario-blue); border-color: var(--ink); box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.22); }
+.about-coin-discovery > div strong, .discovery-counter { color: var(--mario-yellow); }
+.discovery-counter { border-color: var(--mario-yellow); }
+.about-exit-pipe a { color: var(--ink); background: var(--mario-yellow); border-color: var(--ink); box-shadow: 4px 4px 0 var(--ink); }
+.about-exit-pipe a:hover { box-shadow: 4px 6px 0 var(--ink); }
+
+/* Skills: bright grassland around simple, readable inventory cards. */
+.skills-section {
+  background-color: #d8edff;
+  background-image: radial-gradient(rgba(0, 40, 200, 0.13) 1.5px, transparent 1.5px), linear-gradient(180deg, #d8edff, var(--paper-card));
+  background-size: 22px 22px, auto;
+}
+.skills-section::before {
+  background: repeating-linear-gradient(90deg, var(--mario-green) 0 38px, #57d657 38px 42px, var(--mario-green) 42px 80px);
+  border-bottom: 3px solid var(--mario-pipe-dark);
+}
+.skills-section .section-kicker { color: var(--mario-pipe-dark); }
+.skills-section .section-heading h2 span { color: var(--mario-red); }
+.skills-section .section-intro, .honest-note { color: rgba(0, 0, 0, 0.76); }
+.skill-card {
+  background: var(--paper-card);
+  border: 2px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 4px 5px 0 var(--ink);
+}
+.skill-card:nth-child(even) { background: var(--paper-trans); }
+.skill-card:hover { box-shadow: 6px 8px 0 var(--ink); }
+.skill-icon { border-color: var(--ink); border-radius: 4px; box-shadow: 3px 3px 0 var(--ink); }
+.skill-icon.red { color: #fff; background: var(--mario-red); }
+.skill-icon.blue { color: #fff; background: var(--mario-blue); }
+.skill-icon.yellow { color: var(--ink); background: var(--mario-yellow); }
+.skill-icon.green { color: #fff; background: var(--mario-green); }
+.skill-card h3 { color: var(--ink); }
+.skill-card p { color: rgba(0, 0, 0, 0.75); }
+.skill-tag { color: var(--mario-blue); }
+.skill-chips span { color: var(--ink); background: rgba(92, 148, 252, 0.13); border: 1px solid rgba(0, 40, 200, 0.18); }
+
+/* Favorites: warm bonus world, with one consistent card treatment. */
+.favorites-section {
+  background: linear-gradient(180deg, #ffdf8a 0%, #fff0bd 100%);
+}
+.favorites-section::before {
+  opacity: 1;
+  background: repeating-linear-gradient(90deg, var(--mario-red) 0 30px, var(--mario-yellow) 30px 60px, var(--mario-green) 60px 90px, var(--mario-blue) 90px 120px);
+  border-bottom: 4px solid var(--ink);
+}
+.favorites-section .section-kicker { color: var(--mario-blue); }
+.favorites-section .section-heading h2 span { color: var(--mario-red); }
+.favorites-section .section-intro { color: rgba(0, 0, 0, 0.76); }
+.favorite-card {
+  color: var(--ink);
+  background: var(--paper-trans);
+  border: 2px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.favorite-play, .favorite-listen, .favorite-screen,
+.favorite-dance, .favorite-read, .favorite-home { background: var(--paper-trans); }
+.favorite-card:hover { border-color: var(--ink); box-shadow: 8px 8px 0 var(--ink); }
+.favorite-number { color: rgba(0, 0, 0, 0.6); }
+.favorite-emoji { border: 2px solid var(--ink); border-radius: 7px; box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15); }
+.favorite-card:nth-child(3n + 1) .favorite-emoji { background: rgba(0, 168, 0, 0.14); }
+.favorite-card:nth-child(3n + 2) .favorite-emoji { background: rgba(252, 225, 0, 0.42); }
+.favorite-card:nth-child(3n) .favorite-emoji { background: rgba(0, 40, 200, 0.12); }
+.favorite-card h3 { color: var(--ink); }
+.favorite-card p { color: rgba(0, 0, 0, 0.76); }
+.favorite-foot { color: var(--mario-blue); }
+
+/* Goals: night world with coin-yellow titles and clean power-up cards. */
+.goals-section {
+  background: linear-gradient(180deg, #001a80 0%, var(--mario-blue) 64%, #183fbd 100%);
+}
+.goals-section::before { color: rgba(252, 225, 0, 0.8); text-shadow: 0 0 24px rgba(252, 225, 0, 0.25); }
+.goals-section::after { color: rgba(252, 225, 0, 0.55); }
+.goals-section .section-kicker { color: var(--mario-yellow); }
+.goals-section .section-heading h2 { color: #fff; }
+.goals-section .section-heading h2 span { color: var(--mario-yellow); }
+.goals-section .section-intro { color: rgba(255, 255, 255, 0.88); }
+.goal-card {
+  background: var(--paper-card);
+  border: 3px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 5px 6px 0 var(--ink);
+}
+.goal-card:nth-child(2) { background: #e4f7df; }
+.goal-card:nth-child(3) { background: #e0eaff; }
+.goal-card h3 { color: var(--ink); }
+.goal-card p { color: rgba(0, 0, 0, 0.76); }
+.goal-icon { border: 2px solid var(--ink); border-radius: 6px; box-shadow: 3px 3px 0 var(--ink); }
+.goal-number { color: rgba(0, 0, 0, 0.6); }
+.goal-status { color: #fff; background: var(--mario-green); border: 1px solid var(--mario-pipe-dark); }
+
+/* Quiz bonus stage: midnight blue, gold frame, red progress and green rewards. */
+.quest-section { background: linear-gradient(180deg, #001253 0%, var(--mario-blue) 72%, #173a9e 100%); }
+.quest-section::before {
+  background: repeating-linear-gradient(90deg, var(--mario-brick) 0 34px, var(--mario-ground-top) 34px 38px, var(--mario-brick) 38px 72px);
+  border-top: 5px solid var(--mario-green);
+}
+.quest-backdrop {
+  background-image: radial-gradient(circle at 8% 20%, var(--mario-yellow) 0 2px, transparent 3px), radial-gradient(circle at 76% 17%, #fff 0 1.5px, transparent 3px), radial-gradient(circle at 42% 9%, #fff 0 1.5px, transparent 3px), radial-gradient(circle at 92% 48%, var(--mario-yellow) 0 2px, transparent 3px);
+  background-size: 130px 120px, 170px 140px, 210px 170px, 180px 180px;
+}
+.section-heading-light .section-kicker { color: var(--mario-yellow); }
+.section-heading-light h2 { color: #fff; }
+.section-heading-light h2 span { color: var(--mario-yellow); }
+.section-heading-light .section-intro { color: rgba(255, 255, 255, 0.86); }
+.game-side {
+  color: var(--ink);
+  background: linear-gradient(145deg, var(--paper-card), #fff0bd);
+  border: 3px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 5px 6px 0 var(--ink);
+}
+.game-emblem { background: var(--mario-yellow); border-color: var(--ink); box-shadow: 4px 4px 0 var(--ink); color: var(--mario-red); text-shadow: none; }
+.game-label { color: var(--mario-blue); }
+.score-board { color: #fff; background: var(--mario-blue); border: 2px solid var(--mario-yellow); border-radius: 5px; }
+.score-board > span { color: #fff; }
+.score-board > strong, .score-board small { color: var(--mario-yellow); }
+.score-meter { background: rgba(255, 255, 255, 0.24); }
+.score-meter span { background: linear-gradient(90deg, var(--mario-yellow), var(--mario-ground-top)); }
+.quiz-card { background: var(--paper-card); border: 3px solid var(--mario-yellow); border-radius: 7px; box-shadow: 7px 8px 0 rgba(0, 0, 0, 0.36); }
+.world-pill { color: #fff; background: var(--mario-blue); border: 1px solid var(--ink); border-radius: 4px; }
+.quiz-progress { background: rgba(0, 0, 0, 0.1); }
+.quiz-progress span { background: linear-gradient(90deg, var(--mario-red), var(--mario-yellow)); }
+.question-label { color: rgba(0, 0, 0, 0.5); }
+.question-label span { color: var(--mario-red); }
+.quiz-card h3 { color: var(--ink); }
+.quiz-option {
+  color: var(--ink);
+  background: var(--paper-card);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+.quiz-option:hover:not(:disabled) { background: rgba(252, 225, 0, 0.35); border-color: var(--mario-ground-top); box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15); }
+.option-key { color: #fff; background: var(--mario-blue); border-radius: 4px; }
+.quiz-option.correct { color: #003f00; background: #e0f8df; border-color: var(--mario-green); }
+.quiz-option.correct .option-key { color: #fff; background: var(--mario-green); }
+.quiz-option.incorrect { color: #710f16; background: #ffebeb; border-color: var(--mario-red); }
+.quiz-option.incorrect .option-key { color: #fff; background: var(--mario-red); }
+.quiz-bottom #quiz-feedback.correct-text { color: var(--mario-pipe-dark); }
+.quiz-bottom #quiz-feedback.incorrect-text { color: var(--mario-red-dark); }
+.result-star { background: var(--mario-yellow); border-color: var(--ink); box-shadow: 5px 5px 0 var(--ink); color: var(--mario-red); text-shadow: none; }
+.quest-tip { color: rgba(255, 255, 255, 0.86); }
+.quest-tip span { color: var(--mario-yellow); }
+
+/* Contact: bright sky-to-ground finish, cream connection panel. */
+.contact-section { background: linear-gradient(180deg, #ffdf8a 0%, #fff0c4 54%, #c5e7ff 100%); }
+.contact-section::before {
+  background: repeating-linear-gradient(90deg, var(--mario-red) 0 34px, var(--mario-yellow) 34px 68px, var(--mario-green) 68px 102px, var(--mario-blue) 102px 136px);
+}
+.contact-section .section-kicker { color: var(--mario-blue); }
+.contact-copy h2 { color: var(--ink); }
+.contact-copy h2 span { color: var(--mario-red); }
+.contact-copy > p:not(.section-kicker) { color: rgba(0, 0, 0, 0.76); }
+.contact-stamp { color: var(--ink); background: rgba(252, 225, 0, 0.35); border-color: var(--mario-ground-top); }
+.contact-card {
+  background: var(--paper-trans);
+  border: 3px solid var(--ink);
+  border-radius: 7px;
+  box-shadow: 6px 7px 0 var(--ink);
+}
+.contact-card-head { border-bottom-color: rgba(0, 0, 0, 0.16); }
+.contact-card-head h3 { color: var(--ink); }
+.contact-card-head p { color: rgba(0, 0, 0, 0.7); }
+.contact-link {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+}
+.contact-link:hover { background: #fff; }
+.contact-icon { color: #fff; background: var(--mario-red); border: 2px solid var(--ink); border-radius: 5px; }
+.contact-icon.facebook { color: #fff; background: var(--mario-blue); }
+.contact-icon.instagram { color: var(--ink); background: var(--mario-yellow); }
+.contact-link small { color: var(--mario-blue); }
+.contact-link strong { color: var(--ink); }
+.link-arrow { color: var(--mario-red); }
+.contact-smallprint { color: rgba(0, 0, 0, 0.72); }
+.contact-smallprint span { color: var(--mario-red); }
+
+/* Footer branding and the real .back-to-top class used in the HTML. */
+.site-footer {
+  color: #fff;
+  background: var(--mario-blue);
+  border-top: 5px solid var(--mario-green);
+}
+.footer-brand, .footer-logo, .footer-brand-name {
+  color: var(--mario-yellow);
+  font-family: var(--body);
+  font-size: 25px !important;
+  font-weight: 900;
+  line-height: 1.3;
+  letter-spacing: 0.2px;
+  text-shadow: 2px 2px 0 var(--ink);
+}
+.footer-inner p { color: rgba(255, 255, 255, 0.86); }
+.back-to-top, .back-top {
+  color: #fff;
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 900;
+  padding: 9px 12px;
+  border: 2px solid var(--mario-yellow);
+  border-radius: 5px;
+  background: var(--mario-red);
+  box-shadow: 0 3px 0 var(--mario-red-dark);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.back-to-top:hover, .back-top:hover {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 0 var(--ink);
+}
+
+/* Progress and XP pop use the coin palette. */
+.scroll-progress { background: var(--mario-yellow); box-shadow: 0 2px 0 var(--ink); }
+.coin-pop {
+  color: var(--ink);
+  background: var(--mario-yellow);
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.coin-pop span { color: var(--mario-red); text-shadow: none; }
+
+/* Responsive typography and mobile menu colors. */
+@media (max-width: 1000px) {
+  .brand-name { font-size: 23px; }
+  .nav-link { font-size: 12px; }
+  .nav-contact { font-size: 12px; }
+}
+@media (max-width: 760px) {
+  .brand-name { font-size: 22px; }
+  .nav-links {
+    background: var(--mario-blue);
+    border: 2px solid var(--mario-yellow);
+    border-top: 4px solid var(--mario-green);
+    border-radius: 0 0 7px 7px;
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0.18);
+  }
+  .nav-link { color: #fff; font-size: 14px; }
+  .nav-link.active { color: var(--ink); background: var(--mario-yellow); }
+  .nav-contact { font-size: 14px; }
+  .hero h1 { letter-spacing: -2px; }
+  .about-path-heading h3 { line-height: 1.25; }
+  .footer-inner { row-gap: 14px; }
+  .footer-inner p { flex-basis: 100%; }
+  .footer-brand, .footer-logo, .footer-brand-name { font-size: 22px !important; }
+}
+@media (max-width: 420px) {
+  .brand-name { font-size: 20px; }
+  .hero h1 { font-size: 39px; }
+  .section-heading h2 { font-size: 30px; }
+  .footer-brand, .footer-logo, .footer-brand-name { font-size: 21px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; }
+}
+
+
+/* ===== SUPER MARIO FONT FIX ===== */
+
+/* Main website font */
+body,
+p,
+a,
+button,
+input,
+textarea,
+select,
+.nav-link,
+.nav-contact,
+.button,
+.brand-name,
+.hero-lead,
+.hero-description,
+.card,
+.contact-link {
+    font-family: 'DM Sans', sans-serif !important;
+}
+
+/* Mario pixel font for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.hero h1,
+.brand-name {
+    font-family: 'Press Start 2P', monospace !important;
+    line-height: 1.6;
+}
+
+/* Keep pixel text readable */
+h1, h2 {
+    font-size: clamp(18px, 2.5vw, 28px);
+}
+
+h3, h4, h5, h6 {
+    font-size: 15px;
+}
+
+/* Apply pixel font to game-style labels */
+.eyebrow,
+.section-kicker,
+.game-label,
+.checkpoint-world,
+.favorite-number,
+.goal-status,
+.score-board > span {
+    font-family: 'Press Start 2P', monospace !important;
+}
+
+/* ===== AESTHETIC MARIO NAVBAR + HEADINGS ===== */
+
+/* Navbar: classic Mario blue, slightly softened */
+nav,
+.navbar,
+header nav {
+    border-bottom: 3px solid #e52521 !important;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.10);
+}
+
+/* Navbar text: pixel font, but readable */
+nav a,
+.navbar a,
+.nav-link,
+.nav-contact {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 10px !important;
+    line-height: 1.8;
+    color: #fff7e5 !important;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+nav a:hover,
+.navbar a:hover,
+.nav-link:hover,
+.nav-contact:hover {
+    color: #0b0a00 !important;
+    transform: translateY(-2px);
+}
+
+/* Headings: pixel style without taking over the page */
+/* Bigger Super Mario headings */
+h1,
+.hero h1 {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: clamp(28px, 3.5vw, 42px) !important;
+    line-height: 1.6;
+}
+
+h2,
+.section-title {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: clamp(21px, 2.5vw, 30px) !important;
+    line-height: 1.7;
+}
+
+h3 {
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: clamp(15px, 1.8vw, 20px) !important;
+    line-height: 1.7;
+}
+
+/* Mobile navbar */
+@media (max-width: 768px) {
+    nav a,
+    .navbar a,
+    .nav-link,
+    .nav-contact {
+        font-size: 9px !important;
+    }
+
+    h1,
+    .hero h1 {
+        font-size: 19px !important;
+    }
+}
+
+/* ===== WARM MARIO THEME ===== */
+
+/* Navbar */
+nav,
+.navbar,
+header nav {
+    background: #fff4dc !important;
+    border-bottom: 3px solid #b52c27 !important;
+    box-shadow: 0 3px 8px rgba(60, 45, 30, 0.08);
+}
+
+/* Navbar links */
+nav a,
+.navbar a,
+.nav-link,
+.nav-contact {
+    color: #384b65 !important;
+}
+
+/* Navbar hover: red text on cream, no yellow box */
+nav a:hover,
+.navbar a:hover,
+.nav-link:hover,
+.nav-contact:hover {
+    color: #b52c27 !important;
+    background: transparent !important;
+    -webkit-text-fill-color: #b52c27 !important;
+}
+
+/* Main header / hero section */
+header,
+.hero {
+    background-color: #fff4dc;
+}
+
+/* Footer */
+footer {
+    background: #f7e8ca !important;
+    color: #384b65 !important;
+    border-top: 3px solid #b52c27 !important;
+}
+
+footer p,
+footer span,
+footer a,
+footer h1,
+footer h2,
+footer h3 {
+    color: #384b65 !important;
+}
+
+footer a:hover {
+    color: #b52c27 !important;
+}
+
+.site-header,
+.site-header .navbar {
+    background: #fff4dc !important;
+    border-bottom: 3px solid #b52c27 !important;
+    box-shadow: 0 3px 8px rgba(60, 45, 30, 0.08) !important;
+}
+.site-footer {
+    background: #f7e8ca !important;
+    color: #384b65 !important;
+    border-top: 4px solid #b52c27 !important;
+}
+
+/* Footer branding: Super Mario pixel font */
+.site-footer .footer-brand,
+.site-footer .footer-logo,
+.site-footer .footer-brand-name {
+    font-family: 'Press Start 2P', monospace !important;
+    color: #b52c27 !important;
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0 !important;
+    text-shadow: none !important;
+}
+
+/* Footer text */
+.site-footer p,
+.site-footer .footer-inner p {
+    color: #384b65 !important;
+}
+
+/* Footer links */
+.site-footer a {
+    color: #384b65 !important;
+}
+
+.site-footer a:hover {
+    color: #b52c27 !important;
+}
+
+/* Back-to-top button */
+.site-footer .back-to-top,
+.site-footer .back-top {
+    color: #fff !important;
+    background: #b52c27 !important;
+    border-color: #b52c27 !important;
+}
+
+.site-footer .back-to-top:hover,
+.site-footer .back-top:hover {
+    color: #fff4dc !important;
+    background: #81201c !important;
+}
+
+/* Make the entire header and navbar look seamless */
+.site-header,
+.site-header .navbar {
+    background: #fff4dc !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove separate backgrounds from navbar contents */
+.site-header .nav-links {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep the header's bottom accent */
+.site-header {
+    border-bottom: 3px solid #b52c27 !important;
+}

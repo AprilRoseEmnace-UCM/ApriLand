@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="Explore ApriLand, April Rose Emnace's Mario-inspired personal portfolio.">
+  <title>ApriLand | April Rose Emnace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/mario-theme-overrides.css">
+  <script src="./js/script.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <nav class="navbar wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="ApriLand home">
+        <img class="brand-logo" src="./img/logo.png" alt="" width="46" height="46">
+        <span class="brand-name">Apri<span>Land</span></span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#skills">Skills</a>
+        <a class="nav-link" href="#hobbies">Favorites</a>
+        <a class="nav-link" href="#goals">Goals</a>
+        <a class="nav-link" href="#quest">Mini-game <span class="nav-star" aria-hidden="true">★</span></a>
+        <a class="nav-contact" href="#contact">Say hello <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero section" id="home" aria-labelledby="hero-title">
+      <div class="hero-sky" aria-hidden="true">
+        <span class="cloud cloud-one"></span><span class="cloud cloud-two"></span><span class="cloud cloud-three"></span>
+        <span class="coin coin-one">¢</span><span class="coin coin-two">¢</span>
+        <span class="hill hill-one"></span><span class="hill hill-two"></span>
+      </div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> PLAYER 01 · PERSONAL PORTFOLIO</div>
+          <h1 id="hero-title">Welcome to<br><span>ApriLand!</span></h1>
+          <p class="hero-lead"><strong>Curious mind. Creative ideas.</strong></p>
+          <p class="hero-description">I'm April Rose Emnace, a BS Information Technology student who loves exploring code, creative design, and ways technology can help people.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#about">Explore my world <span aria-hidden="true">↓</span></a>
+            <button class="button button-secondary" id="hero-powerup" type="button"><span aria-hidden="true">?</span> Get a power-up</button>
+          </div>
+          <div class="hero-meta"><span><span class="meta-icon" aria-hidden="true">✦</span> Curious by nature</span><span><span class="meta-icon" aria-hidden="true">⌘</span> IT student</span><span><span class="meta-icon" aria-hidden="true">♥</span> Family first</span></div>
+        </div>
+        <div class="hero-art" aria-label="Profile card for April Rose Emnace">
+          <div class="floating-label label-top"><span>WORLD 1-1</span><span class="tiny-heart" aria-hidden="true">♥</span></div>
+          <div class="portrait-card">
+            <div class="portrait-sky"><span class="pixel-cloud cloud-a"></span><span class="pixel-cloud cloud-b"></span><span class="mini-star">✦</span></div>
+            <div class="portrait-frame">
+              <span class="avatar-fallback" aria-hidden="true">AE</span>
+              <img class="portrait" src="./img/picture.jpg" alt="April Rose Emnace" onerror="this.style.display='none'">
+            </div>
+            <div class="portrait-caption"><span class="online-dot"></span><div><strong>April Rose Emnace</strong><small>Future-ready, one level at a time.</small></div></div>
+            <div class="portrait-ground" aria-hidden="true"></div>
+          </div>
+          <div class="floating-label label-bottom"><span class="mushroom" aria-hidden="true">🍄</span><span>READY TO LEVEL UP</span></div>
+          <button class="floating-block" id="floating-block" type="button" aria-label="Hit the mystery block for a random message">?</button>
+
+        </div>
+      </div>
+      <div class="powerup-toast" id="powerup-toast" role="status" aria-live="polite"></div>
+      <a class="scroll-cue" href="#about"><span class="scroll-line"></span> SCROLL TO EXPLORE</a>
+    </section>
+
+    <!-- WORLD 1-1: APRIL'S STORY -->
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="about-sky-decor" aria-hidden="true">
+        <span class="about-cloud about-cloud-one"></span>
+        <span class="about-cloud about-cloud-two"></span>
+        <span class="about-cloud about-cloud-three"></span>
+        <span class="about-hill about-hill-one"></span>
+        <span class="about-hill about-hill-two"></span>
+        <span class="about-pipe about-pipe-left"><i></i></span>
+        <span class="about-pipe about-pipe-right"><i></i></span>
+      </div>
+
+      <div class="wrap about-level-wrap">
+        <div class="about-game-hud" aria-label="ApriLand game status">
+          <div class="hud-brand"><span class="hud-mushroom" aria-hidden="true">●</span><strong>APRILAND BROS.</strong></div>
+          <div class="hud-world"><small>WORLD</small><strong>1-1</strong></div>
+          <div class="hud-coins"><span class="hud-coin-icon" aria-hidden="true">¢</span><strong id="about-coin-count">00</strong><small>/ 03 COINS</small></div>
+        </div>
+
+        <div class="about-game-scene">
+          <div class="scene-cloud scene-cloud-a" aria-hidden="true"></div>
+          <div class="scene-cloud scene-cloud-b" aria-hidden="true"></div>
+          <div class="scene-brick-stack" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div class="scene-coin scene-coin-a" aria-hidden="true">¢</div>
+          <div class="scene-coin scene-coin-b" aria-hidden="true">¢</div>
+
+          <div class="about-scene-copy">
+            <p class="about-level-label"><span aria-hidden="true">⚑</span> STAGE 01 · CHARACTER INTRO</p>
+            <h2 id="about-title">It's-a me,<span>April!</span></h2>
+            <p class="about-scene-lead">Welcome to my little corner of the Mushroom Kingdom.</p>
+            <p class="about-scene-text">I'm <strong>April Rose Emnace</strong>, a Bachelor of Science in Information Technology student at the <strong>University of Cebu–Main Campus</strong>. I'm into programming, web development, databases, and creative design—and I'm learning how to turn ideas into technology that helps people.</p>
+
+            <div class="about-player-status">
+              <span><b class="status-light"></b> PLAYER 01: APRIL</span>
+              <span>CLASS: IT STUDENT</span>
+            </div>
+
+            <div class="about-mystery-area">
+              <button class="about-question-block" id="about-question-block" type="button" aria-label="Hit the mystery block to reveal a fact about April">?</button>
+              <div class="about-mystery-copy"><strong>Need a power-up?</strong><p>Hit the block to reveal a random fact about me.</p></div>
+            </div>
+            <p class="about-powerup-message" id="about-powerup-message" role="status" aria-live="polite">Every player has a story. Here's one of mine.</p>
+          </div>
+
+          <div class="about-scene-art" aria-label="Mario and Luigi cheering in a pixel-art Mushroom Kingdom scene">
+            <div class="scene-sign"><span>WELCOME TO</span><strong>APRILAND</strong><small>THE NEXT LEVEL STARTS HERE</small></div>
+            <div class="scene-sparkle sparkle-one" aria-hidden="true">✦</div>
+            <div class="scene-sparkle sparkle-two" aria-hidden="true">★</div>
+            <div class="about-mario-duo" aria-hidden="true">
+              <svg class="pixel-hero mario-sprite" viewBox="0 0 80 96">
+                <g shape-rendering="crispEdges">
+                  <rect x="22" y="4" width="36" height="8" fill="#d92732"/><rect x="14" y="12" width="52" height="8" fill="#ed3540"/><rect x="10" y="20" width="58" height="8" fill="#ed3540"/><rect x="50" y="20" width="20" height="8" fill="#9f1724"/>
+                  <rect x="18" y="28" width="44" height="8" fill="#f4c29a"/><rect x="14" y="36" width="52" height="8" fill="#f4c29a"/><rect x="18" y="44" width="44" height="8" fill="#f4c29a"/><rect x="28" y="32" width="7" height="8" fill="#292c39"/><rect x="48" y="32" width="7" height="8" fill="#292c39"/><rect x="34" y="46" width="16" height="5" fill="#6c2f2b"/>
+                  <rect x="18" y="52" width="44" height="8" fill="#2872ce"/><rect x="10" y="60" width="60" height="8" fill="#2872ce"/><rect x="18" y="68" width="44" height="8" fill="#2872ce"/><rect x="24" y="52" width="9" height="9" fill="#ffd24f"/><rect x="47" y="52" width="9" height="9" fill="#ffd24f"/><rect x="10" y="76" width="24" height="8" fill="#7c3f24"/><rect x="46" y="76" width="24" height="8" fill="#7c3f24"/><rect x="6" y="84" width="30" height="8" fill="#55301f"/><rect x="44" y="84" width="30" height="8" fill="#55301f"/>
+                </g>
+              </svg>
+              <svg class="pixel-hero luigi-sprite" viewBox="0 0 80 96">
+                <g shape-rendering="crispEdges">
+                  <rect x="22" y="4" width="36" height="8" fill="#18864a"/><rect x="14" y="12" width="52" height="8" fill="#24a75f"/><rect x="10" y="20" width="58" height="8" fill="#24a75f"/><rect x="50" y="20" width="20" height="8" fill="#116738"/>
+                  <rect x="18" y="28" width="44" height="8" fill="#f4c29a"/><rect x="14" y="36" width="52" height="8" fill="#f4c29a"/><rect x="18" y="44" width="44" height="8" fill="#f4c29a"/><rect x="28" y="32" width="7" height="8" fill="#292c39"/><rect x="48" y="32" width="7" height="8" fill="#292c39"/><rect x="32" y="46" width="20" height="5" fill="#6c2f2b"/>
+                  <rect x="18" y="52" width="44" height="8" fill="#278b4d"/><rect x="10" y="60" width="60" height="8" fill="#278b4d"/><rect x="18" y="68" width="44" height="8" fill="#278b4d"/><rect x="24" y="52" width="9" height="9" fill="#ffd24f"/><rect x="47" y="52" width="9" height="9" fill="#ffd24f"/><rect x="10" y="76" width="24" height="8" fill="#426ec5"/><rect x="46" y="76" width="24" height="8" fill="#426ec5"/><rect x="6" y="84" width="30" height="8" fill="#55301f"/><rect x="44" y="84" width="30" height="8" fill="#55301f"/>
+                </g>
+              </svg>
+              <div class="duo-speech">Let's-a learn!</div>
+            </div>
+            <div class="about-scene-pipe" aria-hidden="true"><span></span></div>
+            <div class="about-scene-ground" aria-hidden="true"></div>
+          </div>
+          <div class="scene-ground-strip" aria-hidden="true"></div>
+        </div>
+
+        <div class="about-path-heading">
+          <p class="about-level-label"><span aria-hidden="true">★</span> <b>THE PLAYER JOURNEY</b></p>
+          <h3>Three checkpoints. <span>One big quest.</span></h3>
+          <p>Follow the path through my world—and collect the coins to unlock a few extra facts.</p>
+        </div>
+
+        <div class="about-world-path">
+          <article class="world-checkpoint checkpoint-start">
+            <div class="checkpoint-topline"><span class="checkpoint-world">01 · START</span><span class="checkpoint-icon" aria-hidden="true">🏁</span></div>
+            <h4>Meet Player 01</h4>
+            <p>I'm an IT student who loves exploring how code, databases, and design can work together to solve real problems.</p>
+            <div class="checkpoint-tags"><span>UC–MAIN</span><span>BSIT</span></div>
+            <button class="world-coin" type="button" data-coin="0" aria-label="Collect coin 1 to reveal an April fact"><span>¢</span></button>
+            <div class="checkpoint-ground" aria-hidden="true"></div>
+          </article>
+
+          <article class="world-checkpoint checkpoint-powerup">
+            <div class="checkpoint-topline"><span class="checkpoint-world">02 · POWER-UP</span><span class="checkpoint-icon" aria-hidden="true">🍄</span></div>
+            <h4>My player style</h4>
+            <p>Creativity keeps me curious. Continuous learning helps me improve, and problem-solving pushes me to look for better ways.</p>
+            <div class="checkpoint-tags"><span>CREATE</span><span>LEARN</span><span>SOLVE</span></div>
+            <button class="world-coin" type="button" data-coin="1" aria-label="Collect coin 2 to reveal an April fact"><span>¢</span></button>
+            <div class="checkpoint-ground" aria-hidden="true"></div>
+          </article>
+
+          <article class="world-checkpoint checkpoint-castle">
+            <div class="checkpoint-topline"><span class="checkpoint-world">03 · THE GOAL</span><span class="checkpoint-icon" aria-hidden="true">🏰</span></div>
+            <h4>Build something useful</h4>
+            <p>My main quest is to grow into a skilled IT professional and create meaningful, accessible applications that help people.</p>
+            <div class="checkpoint-tags"><span>BUILD</span><span>IMPROVE</span></div>
+            <button class="world-coin" type="button" data-coin="2" aria-label="Collect coin 3 to reveal an April fact"><span>¢</span></button>
+            <div class="checkpoint-ground" aria-hidden="true"></div>
+          </article>
+        </div>
+
+        <div class="about-coin-discovery" id="about-coin-discovery" aria-live="polite" aria-atomic="true">
+          <span class="discovery-mushroom" aria-hidden="true">🍄</span>
+          <div><strong id="about-coin-title">A little bonus for explorers!</strong><p id="about-coin-message">Tap the gold coins on the checkpoints to collect them and unlock extra facts about me.</p></div>
+          <span class="discovery-counter"><strong id="about-coin-total">0</strong><small>COINS FOUND</small></span>
+        </div>
+
+        <div class="about-exit-pipe"><span class="exit-flag" aria-hidden="true">⚑</span><p>Ready for the next level?</p><a href="#skills">Explore my skills <span aria-hidden="true">→</span></a></div>
+      </div>
+    </section>
+
+    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="section-kicker">STAGE 02 · POWER-UPS</p><h2 id="skills-title">Skills I'm <span>building.</span></h2></div>
+          <p class="section-intro">Every player starts somewhere. These are some of the tools and strengths I'm leveling up.</p>
+        </div>
+        <div class="skill-grid skill-grid-updated">
+          <article class="skill-card card"><div class="skill-icon red" aria-hidden="true">&lt;/&gt;</div><div class="skill-title"><h3>Web development</h3><span class="skill-tag">BUILDING</span></div><p>Designing and building pages with structure, styling, and interaction.</p><div class="skill-chips"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></article>
+          <article class="skill-card card"><div class="skill-icon blue" aria-hidden="true">{ }</div><div class="skill-title"><h3>Programming</h3><span class="skill-tag">PRACTICING</span></div><p>Exploring programming logic and creating solutions with code.</p><div class="skill-chips"><span>C</span><span>C++</span><span>C#</span><span>Java</span></div></article>
+          <article class="skill-card card"><div class="skill-icon yellow" aria-hidden="true">▦</div><div class="skill-title"><h3>Database management</h3><span class="skill-tag">DEVELOPING</span></div><p>Learning how to organize, manage, and work with data reliably.</p><div class="skill-chips"><span>Databases</span><span>SQL concepts</span></div></article>
+          <article class="skill-card card"><div class="skill-icon green" aria-hidden="true">✓</div><div class="skill-title"><h3>Quality & systems</h3><span class="skill-tag">LEARNING</span></div><p>Improving how I test software and think through system requirements.</p><div class="skill-chips"><span>Software testing</span><span>System development</span></div></article>
+        </div>
+        <p class="honest-note"><span aria-hidden="true">ⓘ</span> This is a learning journey, not a list of expert-level claims. More power-ups to come!</p>
+      </div>
+    </section>
+
+    <section class="section favorites-section" id="hobbies" aria-labelledby="hobbies-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="section-kicker">STAGE 03 · BONUS WORLDS</p><h2 id="hobbies-title">Things that make me <span>me.</span></h2></div>
+          <p class="section-intro">A few things that help me recharge when I'm not doing school quests.</p>
+        </div>
+        <div class="favorites-grid">
+          <article class="favorite-card favorite-play"><span class="favorite-number">01</span><span class="favorite-emoji" aria-hidden="true">🏓</span><h3>Pickleball</h3><p>A fun way to stay active, reset my mind, and enjoy a little friendly competition.</p><div class="favorite-foot">BONUS WORLD: GAME ON</div></article>
+          <article class="favorite-card favorite-listen"><span class="favorite-number">02</span><span class="favorite-emoji" aria-hidden="true">🎧</span><h3>Music</h3><p>Music is part of my everyday soundtrack, whether I'm focusing, relaxing, or recharging.</p><div class="favorite-foot">MOOD: PLAY IT AGAIN</div></article>
+          <article class="favorite-card favorite-screen"><span class="favorite-number">03</span><span class="favorite-emoji" aria-hidden="true">🎬</span><h3>Movies & anime</h3><p>I love stories that let me explore different worlds, ideas, and perspectives.</p><div class="favorite-foot">NEXT UP: ONE MORE EPISODE</div></article>
+          <article class="favorite-card favorite-dance"><span class="favorite-number">04</span><span class="favorite-emoji" aria-hidden="true">🎨</span><h3>Creative design</h3><p>I enjoy making digital experiences that feel clear, thoughtful, and fun to use.</p><div class="favorite-foot">DESIGN WITH PURPOSE</div></article>
+          <article class="favorite-card favorite-read"><span class="favorite-number">05</span><span class="favorite-emoji" aria-hidden="true">🧩</span><h3>Problem-solving</h3><p>I like figuring out how things work and trying different ways to solve a challenge.</p><div class="favorite-foot">PUZZLE ACCEPTED</div></article>
+          <article class="favorite-card favorite-home"><span class="favorite-number">06</span><span class="favorite-emoji" aria-hidden="true">🌱</span><h3>Continuous learning</h3><p>Every new concept is another chance to grow and become more confident in IT.</p><div class="favorite-foot">XP NEVER STOPS</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section goals-section" id="goals" aria-labelledby="goals-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div><p class="section-kicker">STAGE 04 · THE NEXT QUEST</p><h2 id="goals-title">Where I'm headed <span>next.</span></h2></div>
+          <p class="section-intro">My current goals are simple: keep learning, keep building, and make the things I create useful to real people.</p>
+        </div>
+        <div class="goal-track">
+          <article class="goal-card card"><span class="goal-number">01</span><div class="goal-icon">🧠</div><h3>Strengthen my foundation</h3><p>Keep improving in programming, databases, software testing, and system development.</p><span class="goal-status">IN PROGRESS</span></article>
+          <article class="goal-card card"><span class="goal-number">02</span><div class="goal-icon">🛠️</div><h3>Build more applications</h3><p>Turn what I learn into practical projects that solve problems and are easy to use.</p><span class="goal-status">NEXT LEVEL</span></article>
+          <article class="goal-card card"><span class="goal-number">03</span><div class="goal-icon">🚀</div><h3>Become an IT professional</h3><p>Gain experience, stay curious, and use both technology and creativity to make a difference.</p><span class="goal-status">LONG-TERM QUEST</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quest-section" id="quest" aria-labelledby="quest-title">
+      <div class="quest-backdrop" aria-hidden="true"><span class="quest-cloud q-cloud-one"></span><span class="quest-cloud q-cloud-two"></span></div>
+      <div class="wrap quest-wrap">
+        <div class="section-heading section-heading-light">
+          <div><p class="section-kicker">BONUS STAGE · PLAY TO EARN XP</p><h2 id="quest-title">Ready for the <span>Mario Challenge?</span></h2></div>
+          <p class="section-intro">Test your Mushroom Kingdom knowledge and see how many coins you can collect.</p>
+        </div>
+        <div class="game-layout">
+          <aside class="game-side card">
+            <div class="game-emblem" aria-hidden="true">★</div>
+            <p class="game-label">YOUR MISSION</p>
+            <h3>Collect the XP.</h3>
+            <p>Choose an answer for each question. Every correct answer earns 100 XP. Finish the quiz to unlock your rank.</p>
+            <div class="score-board"><span>YOUR SCORE</span><strong><span id="score-val">0</span> <small>XP</small></strong><div class="score-meter"><span id="score-meter-fill"></span></div></div>
+            <button class="button button-secondary game-reset" id="reset-quiz" type="button">↻ Restart challenge</button>
+          </aside>
+          <div class="quiz-card" id="quiz-card">
+            <div class="quiz-top"><span class="world-pill">WORLD 1 · QUIZ</span><span id="quiz-count">QUESTION 1 / 5</span></div>
+            <div class="quiz-progress" aria-label="Quiz progress"><span id="quiz-progress-fill"></span></div>
+            <p class="question-label">QUESTION <span id="question-number">01</span></p>
+            <h3 id="quiz-question">Loading your first question…</h3>
+            <div id="quiz-options" class="quiz-options"></div>
+            <div class="quiz-bottom"><p id="quiz-feedback" role="status" aria-live="polite"></p><button class="button button-primary" id="quiz-next" type="button" disabled>Next question <span aria-hidden="true">→</span></button></div>
+            <div id="quiz-result" class="quiz-result" hidden><div class="result-star" aria-hidden="true">★</div><p class="section-kicker">STAGE CLEAR!</p><h3 id="result-title">Quest complete!</h3><p id="result-copy"></p><button class="button button-primary" id="play-again" type="button">Play again ↻</button></div>
+          </div>
+        </div>
+        <div class="quest-tip"><span aria-hidden="true">▣</span> Psst… don't forget to hit the mystery block near the top of the page!</div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-wrap">
+        <div class="contact-copy"><p class="section-kicker">FINAL STAGE · LET'S CONNECT</p><h2 id="contact-title">Every good adventure starts with <span>hello.</span></h2><p>Thanks for exploring ApriLand! I’m always happy to connect with people who enjoy technology, creativity, and learning new things.</p><div class="contact-stamp" aria-hidden="true"><span>THANKS</span><strong>FOR PLAYING!</strong><span>★ APRILAND ★</span></div></div>
+        <div class="contact-card card">
+          <div class="contact-card-head"><span class="contact-dot"></span><div><h3>Open a connection</h3><p>Choose your preferred way to say hello.</p></div></div>
+          <a class="contact-link" href="mailto:aprilemnace2006@gmail.com"><span class="contact-icon" aria-hidden="true">✉</span><span><small>EMAIL</small><strong>aprilemnace2006@gmail.com</strong></span><span class="link-arrow" aria-hidden="true">↗</span></a>
+          <a class="contact-link" href="https://www.facebook.com/aprilroseepep.emnace" target="_blank" rel="noopener noreferrer"><span class="contact-icon facebook" aria-hidden="true">f</span><span><small>FACEBOOK</small><strong>April Rose Emnace</strong></span><span class="link-arrow" aria-hidden="true">↗</span></a>
+          <a class="contact-link" href="https://www.instagram.com/arsemnce/" target="_blank" rel="noopener noreferrer"><span class="contact-icon instagram" aria-hidden="true">◎</span><span><small>INSTAGRAM</small><strong>@arsemnce</strong></span><span class="link-arrow" aria-hidden="true">↗</span></a>
+          <div class="contact-smallprint"><span aria-hidden="true">♥</span> Made with curiosity, code, and a little Mario magic.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner"><a class="footer-brand" href="#home">🍄 ApriLand</a><p>© <span id="year">2026</span> April Rose Emnace · Made for the next level.</p><a href="#top" class="back-to-top">Back to Top ↑</a></div>
+  </footer>
+
+  <div class="coin-pop" id="coin-pop" aria-hidden="true">+100 XP <span>★</span></div>
+</body>
+</html>
