@@ -387,7 +387,6 @@ h1, h2, h3, h4, h5, h6 {
 .goal-number { color: rgba(0, 0, 0, 0.6); }
 .goal-status { color: #fff; background: var(--mario-green); border: 1px solid var(--mario-pipe-dark); }
 
-/* Quiz bonus stage: midnight blue, gold frame, red progress and green rewards. */
 .quest-section { background: linear-gradient(180deg, #001253 0%, var(--mario-blue) 72%, #173a9e 100%); }
 .quest-section::before {
   background: repeating-linear-gradient(90deg, var(--mario-brick) 0 34px, var(--mario-ground-top) 34px 38px, var(--mario-brick) 38px 72px);
@@ -522,7 +521,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .coin-pop span { color: var(--mario-red); text-shadow: none; }
 
-/* Responsive typography and mobile menu colors. */
 @media (max-width: 1000px) {
   .brand-name { font-size: 23px; }
   .nav-link { font-size: 12px; }
@@ -576,7 +574,6 @@ select,
     font-family: 'DM Sans', sans-serif !important;
 }
 
-/* Mario pixel font for headings */
 h1,
 h2,
 h3,
@@ -590,7 +587,6 @@ h6,
     line-height: 1.6;
 }
 
-/* Keep pixel text readable */
 h1, h2 {
     font-size: clamp(18px, 2.5vw, 28px);
 }
@@ -599,7 +595,6 @@ h3, h4, h5, h6 {
     font-size: 15px;
 }
 
-/* Apply pixel font to game-style labels */
 .eyebrow,
 .section-kicker,
 .game-label,
@@ -618,7 +613,6 @@ header nav {
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.10);
 }
 
-/* Navbar text: pixel font, but readable */
 nav a,
 .navbar a,
 .nav-link,
@@ -638,8 +632,6 @@ nav a:hover,
     transform: translateY(-2px);
 }
 
-/* Headings: pixel style without taking over the page */
-/* Bigger Super Mario headings */
 h1,
 .hero h1 {
     font-family: 'Press Start 2P', monospace !important;
@@ -692,7 +684,6 @@ nav a,
     color: #384b65 !important;
 }
 
-/* Navbar hover: red text on cream, no yellow box */
 nav a:hover,
 .navbar a:hover,
 .nav-link:hover,
@@ -740,7 +731,6 @@ footer a:hover {
     border-top: 4px solid #b52c27 !important;
 }
 
-/* Footer branding: Super Mario pixel font */
 .site-footer .footer-brand,
 .site-footer .footer-logo,
 .site-footer .footer-brand-name {
@@ -781,7 +771,6 @@ footer a:hover {
     background: #81201c !important;
 }
 
-/* Make the entire header and navbar look seamless */
 .site-header,
 .site-header .navbar {
     background: #fff4dc !important;
@@ -789,19 +778,16 @@ footer a:hover {
     box-shadow: none !important;
 }
 
-/* Remove separate backgrounds from navbar contents */
 .site-header .nav-links {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
 }
 
-/* Keep the header's bottom accent */
 .site-header {
     border-bottom: 3px solid #b52c27 !important;
 }
 
-/* ===== APRILAND MOBILE NAVBAR FIX ===== */
 @media (max-width: 760px) {
     .site-header {
         position: sticky;
@@ -827,8 +813,7 @@ footer a:hover {
         font-size: 13px;
         white-space: nowrap;
     }
-
-    /* Hamburger button */
+  
     #menu-toggle {
         display: flex;
         align-items: center;
@@ -842,7 +827,7 @@ footer a:hover {
         cursor: pointer;
     }
 
-    /* Closed menu */
+
     #nav-links {
         display: none;
         position: absolute;
@@ -860,8 +845,7 @@ footer a:hover {
         border-bottom: 3px solid #b52c27 !important;
         box-shadow: 0 8px 14px rgba(0, 0, 0, 0.12);
     }
-
-    /* Open menu — matches your existing JavaScript */
+  
     #nav-links.open {
         display: flex;
     }
